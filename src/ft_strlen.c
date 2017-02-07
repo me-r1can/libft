@@ -6,7 +6,7 @@
 /*   By: nlowe <nlowe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 13:15:15 by nlowe             #+#    #+#             */
-/*   Updated: 2016/12/19 18:28:14 by nlowe            ###   ########.fr       */
+/*   Updated: 2017/02/07 10:51:44 by nlowe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t	ft_strlen(const char *str)
 {
 	int		len;
 
+	if (!str)
+		return (0);
 	len = 0;
 	while (str[len] != '\0')
 		len++;

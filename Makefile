@@ -6,7 +6,7 @@
 #    By: nlowe <nlowe@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/17 21:11:30 by nlowe             #+#    #+#              #
-#    Updated: 2017/01/31 16:07:58 by nlowe            ###   ########.fr        #
+#    Updated: 2017/02/07 10:56:02 by nlowe            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,22 +84,22 @@ SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
 OBJ = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
 
 CC = gcc
-CFLAGS  = -Werror -Wall -Wextra
+CFLAGS = -Werror -Wall -Wextra
 IFLAGS = -Iincludes
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@ar rc $@ $(OBJ)
+	ar rc $@ $(OBJ)
 	@ranlib $@
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
 	@mkdir -p $(OBJ_PATH)
-	@$(CC) $(CFLAGS) $(IFLAGS) -o $@ -c $^
+	$(CC) $(CFLAGS) $(IFLAGS) -o $@ -c $^
 
 clean:
-	@rm -f $(OBJ)
-	@rm -d -f $(OBJ_PATH)
+	@rm -rf $(OBJ)
+	@rm -rf $(OBJ_PATH)
 
 fclean: clean
 	@rm -f $(NAME)
