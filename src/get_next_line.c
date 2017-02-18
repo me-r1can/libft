@@ -6,13 +6,13 @@
 /*   By: nlowe <nlowe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 16:38:38 by nlowe             #+#    #+#             */
-/*   Updated: 2017/02/19 00:45:54 by nlowe            ###   ########.fr       */
+/*   Updated: 2017/02/17 14:50:40 by nlowe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static t_file	*new_file(int fd)
+t_file	*new_file(int fd)
 {
 	t_file	*file;
 
@@ -24,7 +24,7 @@ static t_file	*new_file(int fd)
 	return (file);
 }
 
-static int		add_file(t_file **list, int fd)
+int		add_file(t_file **list, int fd)
 {
 	t_file	*temp;
 
@@ -35,7 +35,19 @@ static int		add_file(t_file **list, int fd)
 	return (1);
 }
 
-static int		read_file(t_file *file, char **ptr)
+char	*cut(t_file *file)
+{
+	char	*temp;
+	char	*ret;
+
+	temp = file->extra;
+	ret = ft_strdup(ft_strsep(&(file->extra), '\n'));
+	file->extra = ft_strdup(file->extra);
+	free(temp);
+	return (ret);
+}
+
+int		read_file(t_file *file, char **ptr)
 {
 	char	buff[BUFF_SIZE + 1];
 	int		ret;
@@ -43,7 +55,7 @@ static int		read_file(t_file *file, char **ptr)
 
 	ret = 1;
 	ft_bzero(buff, BUFF_SIZE + 1);
-	if (!(file->extra = ft_strdup(file->extra)))
+	if (!(file->extra))
 		if (!(file->extra = ft_strnew(0)))
 			return (-1);
 	while (!(ft_strchr(file->extra, '\n')) && ret)
@@ -56,13 +68,12 @@ static int		read_file(t_file *file, char **ptr)
 			return (-1);
 		free(temp);
 	}
-	if (!(*ptr = ft_strsep(&(file->extra), '\n'))
-		&& ft_strlen(file->extra) == 0 && ret == 0)
+	if (!(*ptr = cut(file)) && ft_strlen(file->extra) == 0 && ret == 0)
 		return (0);
 	return (1);
 }
 
-int				get_next_line(int const fd, char **line)
+int		get_next_line(int const fd, char **line)
 {
 	static t_file	*list = NULL;
 	t_file			*temp;
