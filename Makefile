@@ -6,7 +6,7 @@
 #    By: nlowe <nlowe@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/17 21:11:30 by nlowe             #+#    #+#              #
-#    Updated: 2017/02/07 10:56:02 by nlowe            ###   ########.fr        #
+#    Updated: 2017/02/19 00:47:23 by nlowe            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,8 @@ SRC_NAME = ft_atoi.c \
 			ft_lstadd.c \
 			ft_lstiter.c \
 			ft_lstmap.c \
-			ft_puterr.c
+			ft_puterr.c \
+			get_next_line.c
 
 OBJ_PATH = obj
 OBJ_NAME = $(SRC_NAME:.c=.o)
