@@ -6,7 +6,7 @@
 #    By: nlowe <nlowe@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/17 21:11:30 by nlowe             #+#    #+#              #
-#    Updated: 2017/04/05 14:51:29 by nlowe            ###   ########.fr        #
+#    Updated: 2017/04/05 16:23:57 by nlowe            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -92,11 +92,12 @@ IFLAGS = -Iincludes
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rc $@ $(OBJ)
+	@echo "\033[92m----------------------\n|   libft compiled   |\n|       @nlowe       |\n----------------------"
+	@ar rc $@ $(OBJ)
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
 	@mkdir -p $(OBJ_PATH)
-	$(CC) $(CFLAGS) $(IFLAGS) -o $@ -c $^
+	@$(CC) $(CFLAGS) $(IFLAGS) -o $@ -c $^
 
 clean:
 	@rm -rf $(OBJ)
