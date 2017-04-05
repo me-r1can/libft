@@ -6,7 +6,7 @@
 /*   By: nlowe <nlowe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/13 22:32:35 by nlowe             #+#    #+#             */
-/*   Updated: 2017/02/20 13:33:50 by nlowe            ###   ########.fr       */
+/*   Updated: 2017/04/05 14:51:18 by nlowe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ char				*ft_strnstr(const char *big,
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_atoi(const char *str);
+int					ft_atoi_inplace(const char *s, int *i);
 int					ft_isspace(int c);
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
