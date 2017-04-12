@@ -6,7 +6,7 @@
 #    By: nlowe <nlowe@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/17 21:11:30 by nlowe             #+#    #+#              #
-#    Updated: 2017/04/05 16:23:57 by nlowe            ###   ########.fr        #
+#    Updated: 2017/04/12 12:24:00 by nlowe            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,7 +73,9 @@ SRC_NAME = ft_atoi.c \
 			ft_lstnew.c \
 			ft_lstdelone.c \
 			ft_lstdel.c \
-			ft_lstadd.c \
+			ft_lstaddafter.c \
+			ft_lstaddfront.c \
+			ft_lstaddback.c \
 			ft_lstiter.c \
 			ft_lstmap.c \
 			ft_puterr.c \
