@@ -6,7 +6,7 @@
 /*   By: nlowe <nlowe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/13 22:32:35 by nlowe             #+#    #+#             */
-/*   Updated: 2017/04/24 16:29:14 by nlowe            ###   ########.fr       */
+/*   Updated: 2017/04/24 17:03:22 by nlowe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,8 +92,8 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_lstaddby(t_list **alst, t_list *new,
 	int(*cmp)(t_list *, t_list *));
-void				ft_lststraddby(t_list **alst, t_list *new,
-	int(*cmp)(char *, char *));
+void				ft_lstaddbystr(t_list **alst, t_list *new,
+	int(*cmp)(const char *, const char *));
 
 int					get_next_line(int const fd, char **line);
 

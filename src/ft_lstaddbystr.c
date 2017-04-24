@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lststraddby.c                                   :+:      :+:    :+:   */
+/*   ft_lstaddbystr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nlowe <nlowe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 12:18:36 by nlowe             #+#    #+#             */
-/*   Updated: 2017/04/24 15:17:22 by nlowe            ###   ########.fr       */
+/*   Updated: 2017/04/24 16:37:03 by nlowe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-void	ft_lststraddby(t_list **alst, t_list *new, int(*cmp)(char *, char *))
+void	ft_lstaddbystr(t_list **alst, t_list *new,
+	int(*cmp)(const char *, const char *))
 {
 	t_list		*current;
 	t_list		*previous;
