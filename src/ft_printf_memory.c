@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   memory.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nlowe <nlowe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/26 16:38:35 by nlowe             #+#    #+#             */
-/*   Updated: 2017/04/24 15:21:33 by nlowe            ###   ########.fr       */
+/*   Created: 2017/03/20 16:52:15 by nlowe             #+#    #+#             */
+/*   Updated: 2017/03/20 17:26:11 by nlowe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "ft_printf.h"
 
-# define GNL_BUFF_SIZE 100
-# include <stdlib.h>
-# include <unistd.h>
-# include <string.h>
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <fcntl.h>
-# include "libft.h"
-
-typedef struct		s_file
+int		ft_printptr(t_buff *buffer, t_arg *arg)
 {
-	char			*extra;
-	int				fd;
-	struct s_file	*next;
-}					t_file;
+	unsigned char	*ptr;
+	int				ret;
+	unsigned char	out[2];
 
-int					get_next_line(int const fd, char **line);
-
-#endif
+	ret = 0;
+	ptr = (unsigned char *)arg->target;
+	while (*ptr)
+	{
+		out[0] = HEX[*ptr / 16];
+		out[1] = HEX[*ptr % 16];
+		ret += ft_putbuff(buffer, out, 2);
+		ptr++;
+	}
+	return (ret);
+}

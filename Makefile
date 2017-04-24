@@ -6,7 +6,7 @@
 #    By: nlowe <nlowe@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/17 21:11:30 by nlowe             #+#    #+#              #
-#    Updated: 2017/04/12 12:24:00 by nlowe            ###   ########.fr        #
+#    Updated: 2017/04/24 16:22:42 by nlowe            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,8 +78,21 @@ SRC_NAME = ft_atoi.c \
 			ft_lstaddback.c \
 			ft_lstiter.c \
 			ft_lstmap.c \
+			ft_lstaddby.c \
+			ft_lststraddby.c \
 			ft_puterr.c \
-			get_next_line.c
+			get_next_line.c \
+			ft_printf.c \
+			ft_printf_arguments.c \
+			ft_printf_buffer.c \
+			ft_printf_controller.c \
+			ft_printf_conversions.c \
+			ft_printf_flags.c \
+			ft_printf_format.c \
+			ft_printf_memory.c \
+			ft_printf_numbers.c \
+			ft_printf_string.c \
+			ft_printf_wide.c \
 
 OBJ_PATH = obj
 OBJ_NAME = $(SRC_NAME:.c=.o)

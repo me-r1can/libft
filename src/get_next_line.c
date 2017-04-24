@@ -6,7 +6,7 @@
 /*   By: nlowe <nlowe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 16:38:38 by nlowe             #+#    #+#             */
-/*   Updated: 2017/02/17 14:50:40 by nlowe            ###   ########.fr       */
+/*   Updated: 2017/04/24 15:22:14 by nlowe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,18 +49,18 @@ char	*cut(t_file *file)
 
 int		read_file(t_file *file, char **ptr)
 {
-	char	buff[BUFF_SIZE + 1];
+	char	buff[GNL_BUFF_SIZE + 1];
 	int		ret;
 	char	*temp;
 
 	ret = 1;
-	ft_bzero(buff, BUFF_SIZE + 1);
+	ft_bzero(buff, GNL_BUFF_SIZE + 1);
 	if (!(file->extra))
 		if (!(file->extra = ft_strnew(0)))
 			return (-1);
 	while (!(ft_strchr(file->extra, '\n')) && ret)
 	{
-		if ((ret = read(file->fd, buff, BUFF_SIZE)) < 0)
+		if ((ret = read(file->fd, buff, GNL_BUFF_SIZE)) < 0)
 			return (-1);
 		buff[ret] = '\0';
 		temp = file->extra;
@@ -78,7 +78,7 @@ int		get_next_line(int const fd, char **line)
 	static t_file	*list = NULL;
 	t_file			*temp;
 
-	if (fd < 0 || !line || BUFF_SIZE < 1)
+	if (fd < 0 || !line || GNL_BUFF_SIZE < 1)
 		return (-1);
 	temp = list;
 	while (temp)
