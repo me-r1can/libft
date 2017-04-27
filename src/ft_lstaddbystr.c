@@ -6,7 +6,7 @@
 /*   By: nlowe <nlowe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 12:18:36 by nlowe             #+#    #+#             */
-/*   Updated: 2017/04/25 20:16:10 by nlowe            ###   ########.fr       */
+/*   Updated: 2017/04/27 15:03:56 by nlowe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,15 @@ void	ft_lstaddbystr(t_list **alst, t_list *new,
 	t_list		*previous;
 
 	current = *alst;
-	if (current == NULL || cmp((char *)current->content,
-		(char *)new->content) > 0)
+	previous = NULL;
+	while ((current != NULL) && cmp((char *)new->content,
+		(char *)current->content) >= 0)
 	{
-		new->next = *alst;
-		*alst = new;
+		previous = current;
+		current = current->next;
 	}
+	if (previous != NULL)
+		ft_lstaddafter(previous, new);
 	else
-	{
-		while (current != NULL)
-		{
-			previous = current;
-			current = current->next;
-			if (current == NULL || cmp((char *)previous->content,
-				(char *)new->content) > 0)
-				ft_lstaddafter(previous, new);
-		}
-	}
+		ft_lstaddfront(alst, new);
 }

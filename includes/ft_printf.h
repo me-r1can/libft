@@ -6,7 +6,7 @@
 /*   By: nlowe <nlowe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 18:13:12 by nlowe             #+#    #+#             */
-/*   Updated: 2017/04/05 20:03:12 by nlowe            ###   ########.fr       */
+/*   Updated: 2017/04/27 17:23:33 by nlowe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,11 @@ typedef struct		s_buff
 
 int					ft_printf(const char *format, ...);
 int					ft_dprintf(int fd, const char *restrict format, ...);
-void				test_arg(t_arg *arg);
+
 int					ft_putbuff(t_buff *buffer, void *contents, size_t len);
 void				ft_flushbuff(t_buff *buffer);
+void				initialize_buff(t_buff *buffer, int fd);
+
 int					print(t_buff *buffer, t_arg *arg, int count);
 int					padding(t_buff *buffer, t_arg *arg);
 int					has_flag(t_arg *arg, char flag);
