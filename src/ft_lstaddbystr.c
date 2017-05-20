@@ -6,7 +6,7 @@
 /*   By: nlowe <nlowe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 12:18:36 by nlowe             #+#    #+#             */
-/*   Updated: 2017/04/27 15:03:56 by nlowe            ###   ########.fr       */
+/*   Updated: 2017/05/20 16:27:45 by nlowe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 
 void	ft_lstaddbystr(t_list **alst, t_list *new,
-	int(*cmp)(const char *, const char *))
+	int (*cmp)(const char *, const char *))
 {
 	t_list		*current;
 	t_list		*previous;
