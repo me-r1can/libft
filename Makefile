@@ -6,7 +6,7 @@
 #    By: nlowe <nlowe@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/17 21:11:30 by nlowe             #+#    #+#              #
-#    Updated: 2017/05/09 20:12:31 by nlowe            ###   ########.fr        #
+#    Updated: 2017/05/25 18:39:46 by nlowe            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,6 +94,7 @@ SRC_NAME = ft_atoi.c \
 			ft_printf_numbers.c \
 			ft_printf_string.c \
 			ft_printf_wide.c \
+			ft_int_init.c
 
 OBJ_PATH = obj
 OBJ_NAME = $(SRC_NAME:.c=.o)
