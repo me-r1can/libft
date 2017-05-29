@@ -6,7 +6,7 @@
 #    By: nlowe <nlowe@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/17 21:11:30 by nlowe             #+#    #+#              #
-#    Updated: 2017/05/25 18:39:46 by nlowe            ###   ########.fr        #
+#    Updated: 2017/05/29 15:35:24 by nlowe            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME = libft.a
 
 SRC_PATH = src
 SRC_NAME = ft_atoi.c \
+			ft_atoi_base.c \
 			ft_atoi_inplace.c \
 			ft_bzero.c \
 			ft_isalnum.c \
