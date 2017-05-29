@@ -6,7 +6,7 @@
 /*   By: nlowe <nlowe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/13 22:32:35 by nlowe             #+#    #+#             */
-/*   Updated: 2017/05/29 15:34:59 by nlowe            ###   ########.fr       */
+/*   Updated: 2017/05/29 15:42:03 by nlowe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int					ft_atoi_inplace(const char *s, int *i);
 int					ft_isspace(int c);
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
+int					ft_isdigit_base(int c, int base);
 int					ft_isalnum(int c);
 int					ft_isascii(int c);
 int					ft_isprint(int c);

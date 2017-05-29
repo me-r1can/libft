@@ -6,7 +6,7 @@
 #    By: nlowe <nlowe@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/17 21:11:30 by nlowe             #+#    #+#              #
-#    Updated: 2017/05/29 15:35:24 by nlowe            ###   ########.fr        #
+#    Updated: 2017/05/29 15:43:23 by nlowe            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRC_NAME = ft_atoi.c \
 			ft_isalpha.c \
 			ft_isascii.c \
 			ft_isdigit.c \
+			ft_isdigit_base.c \
 			ft_isprint.c \
 			ft_isspace.c \
 			ft_itoa.c \

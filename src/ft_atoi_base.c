@@ -6,21 +6,11 @@
 /*   By: nlowe <nlowe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/20 16:27:04 by nlowe             #+#    #+#             */
-/*   Updated: 2017/05/29 15:35:46 by nlowe            ###   ########.fr       */
+/*   Updated: 2017/05/29 15:43:43 by nlowe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_isdigit_base(const char s, int base)
-{
-	char c;
-
-	c = ft_tolower(s);
-	if (base <= 10)
-		return (ft_isdigit(c));
-	return (ft_isdigit(c) || (ft_isalpha(c) && (c - 'a') < (base - 10)));
-}
 
 int			ft_atoi_base(const char *s, int base)
 {
